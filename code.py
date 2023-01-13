@@ -26,3 +26,27 @@ print('Accuracy:', accuracy)
 print('Precision:', precision)
 print('Recall:', recall)
 print('F1-Score:', f1)
+
+
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.svm import SVC
+
+# Logistic Regression
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
+log_reg_acc = log_reg.score(X_test, y_test)
+print('Logistic Regression accuracy:', log_reg_acc)
+
+# Decision Tree
+dt = DecisionTreeClassifier()
+dt.fit(X_train, y_train)
+dt_acc = dt.score(X_test, y_test)
+print('Decision Tree accuracy:', dt_acc)
+
+# Random Forest
+rf = RandomForestClassifier()
+rf.fit(X_train, y_train)
+rf_acc = rf.score(X_test, y_test)
+print('Random Forest accuracy:', rf_acc)
